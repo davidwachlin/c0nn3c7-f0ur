@@ -12,6 +12,11 @@ $(document).ready(() => {
     ]
     let currentPlayer = 1
     let currentPlayerClass = 'playerOne'
+    let playerOneScore = 0
+    let playerTwoScore = 0
+    document.getElementById('playerOneCount').innerHTML = playerOneScore
+    document.getElementById('playerTwoCount').innerHTML = playerTwoScore
+
 
 
     function createBoard() {
@@ -53,6 +58,11 @@ let placePiece = function (c) {
             // row and col check, add diag
             if (checkCol(c) || (checkRow(row))) {
                 alert(`Player ${currentPlayer} wins!`)
+                if (currentPlayer === 1) {
+                    playerOneScore++
+                } else {
+                    playerTwoScore++
+                }
                 resetBoard()
 
             }
@@ -77,6 +87,8 @@ let placePiece = function (c) {
         } else {
             currentPlayerClass = "playerOne";
         }
+        document.getElementById('playerOneCount').innerHTML = playerOneScore
+        document.getElementById('playerTwoCount').innerHTML = playerTwoScore
     }
 
     function checkCol(c) {
@@ -116,6 +128,12 @@ let placePiece = function (c) {
         }
         return didWin
     }
+
+    // function checkDiag(row, c) {
+    //     didWin = false
+    //     checkForFour = 0
+    //     for (let )
+    // }
 
 
 function resetBoard() {

@@ -16,7 +16,7 @@
 }
 
 .main {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* display: flex;
     justify-content: center; */
     background: #010165;
@@ -45,6 +45,7 @@
     border-radius: 80%;
     cursor: pointer;
     border: 2px solid #00ffff;
+    margin: 1px
 
 
 }
@@ -55,7 +56,7 @@
 
 
 .empty {
-    background-color: lightgray;
+    background-color: #010165;;
 }
 
 .playerOne {
