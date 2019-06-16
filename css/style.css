@@ -1,40 +1,66 @@
+
 .header {
     height: 80px;
     border: 1px solid black;
-    background: gray;
+    background: #00ffff;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #010165;
 }
 
 .sidebar {
     border: 1px solid blue;
+    background-color: #010165;
+    color: #00ffff;
 }
 
 .main {
     border: 1px solid red;
     /* display: flex;
     justify-content: center; */
+    background: #010165;
 
 }
 #game-board {
-    border: 1px dotted red;
+    /* border: 1px dotted red; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 1px;
     grid-row-gap: 1px;
-    grid-auto-flow: column;
+    grid-auto-flow: row wrap; 
     /* justify-content: center; */
 
-    width: 90%;
-    height: 90vh;
+    /* width: 80%; */
+    height: 666px;
+
 
 }
 .game-block {
 
-    background: lightblue;
-    /* display: inline-block; */
-    flex-wrap: wrap;
 
+    display: inline-block;
+
+    border-radius: 80%;
+    cursor: pointer;
+
+
+}
+
+.col0 {
+    background: lightgreen
+}
+
+
+.empty {
+    background-color: lightgray;
+}
+
+.playerOne {
+    background-color: #eb6536;
+}
+
+.playerTwo {
+    background-color: purple;
 }
