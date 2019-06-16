@@ -34,28 +34,36 @@ $(document).ready(() => {
 
 
 createBoard();
-
+//place piece logic
 let placePiece = function (c) {
     let row
     let didPlacePiece = false
     for (let i = 5; i >= 0; i--) {
         if (gameBoard[i][c] === "" && didPlacePiece === false) {
             gameBoard[i][c] = currentPlayer
-            gameBoard[i[c]] = 
-            $(`#r[${i}][${c}]`).removeClass('empty')
-            gameBoard[i[c]].addClass('playerOne')
+            // gameBoard[i[c]] = 
+            // $(`#r[${i}][${c}]`).removeClass('empty')
+            // gameBoard[i[c]].addClass('playerOne')
             let currentSquare = document.getElementById(`r[${i}][${c}]`)
             // currentSquare.style.backgroundColor = 'blue'
             currentSquare.classList.add(currentPlayerClass)
             currentSquare.classList.remove('empty')
+            row = i
+ 
+            // row and col check, add diag
+            if (checkCol(c)) {
+                console.log(`Player ${currentPlayer} wins!`)
+            }
             changeTurn()
+
+            didPlacePiece = true
             
             
-                didPlacePiece = true
-                row = i
             }
         }
     }
+    
+    //change turn logic: add player highlighting here
     function changeTurn () {
         if (currentPlayer === 1) {
             currentPlayer = 2
@@ -69,6 +77,24 @@ let placePiece = function (c) {
         }
     }
 
+    function checkCol(c) {
+            let didWin = false
+            let checkForFour = 0
+            for (let i = 0; i < gameBoard.length; i++) {
+                let currentSquare = gameBoard[i][c]
+                if (currentSquare === currentPlayer) {
+                    checkForFour++
+                    console.log(checkForFour)
+                } else {
+                    checkForFour = 0
+                }
+                if (checkForFour === 4) {
+                    didWin = true
+                    console.log(didWin)
+                }
+            }
+            return didWin
+        }
 
 
 
