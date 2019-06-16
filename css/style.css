@@ -13,6 +13,9 @@
     border: 1px solid blue;
     background-color: #010165;
     color: #00ffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .main {
@@ -44,7 +47,7 @@
 
     border-radius: 80%;
     cursor: pointer;
-    border: 2px solid #00ffff;
+    border: 2px dotted #00ffff;
     margin: 1px
 
 
@@ -64,5 +67,30 @@
 }
 
 .playerTwo {
-    background-color: purple;
+    background-color: #8A2BE2;
 }
+
+.board{
+    border: 2px solid #00ffff;
+
+    color: #010165;
+    text-align: center;
+}
+.counter {
+    color: #00ffff;
+    font-size: 3rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#playerOneBoard h5{
+    background: #eb6536;
+
+}
+#playerTwoBoard h5 {
+    background: #8A2BE2
+
+
+}
+
+
+    
