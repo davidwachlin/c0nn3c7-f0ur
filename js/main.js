@@ -52,7 +52,7 @@ let placePiece = function (c) {
  
             // row and col check, add diag
             if (checkCol(c) || (checkRow(row))) {
-                console.log(`Player ${currentPlayer} wins!`)
+                alert(`Player ${currentPlayer} wins!`)
                 resetBoard()
 
             }
