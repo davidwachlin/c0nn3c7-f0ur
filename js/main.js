@@ -56,7 +56,7 @@ let placePiece = function (c) {
             row = i
  
             // row and col check, add diag
-            if (checkCol(c) || (checkRow(row))) {
+            if (checkCol(c) || checkRow(row)) {
                 alert(`Player ${currentPlayer} wins!`)
                 if (currentPlayer === 1) {
                     playerOneScore++
@@ -115,6 +115,7 @@ let placePiece = function (c) {
         let checkForFour = 0
         for (let j = 0; j < gameBoard[0].length; j++) {
             let checkSquare = gameBoard[row][j]
+            console.log(row, j)
             if (checkSquare === currentPlayer) {
                 checkForFour++
                 console.log(checkForFour)
@@ -128,6 +129,29 @@ let placePiece = function (c) {
         }
         return didWin
     }
+
+    // function checkDiagonalUpRight(row, c) {
+    //     let didWin = false;
+    //     let checkForFour = 0;
+    //     console.log(`row ${row} col ${c}`)
+    //     for (let j = 0; j < gameBoard[0].length; j++) {
+    //         let checkSquare = gameBoard[row][j]
+    //         if (checkSquare === currentPlayer) {
+    //             checkForFour++
+    //             console.log(checkForFour)
+    //         } else {
+    //             checkForFour = 0
+    //         }
+    //         if (checkForFour === 4) {
+    //             didWin = true
+    //             console.log(didWin)
+    //         }
+    //         row--
+    //     }
+    //     return didWin
+    // }
+
+    
 
     // function checkDiag(row, c) {
     //     didWin = false
@@ -225,8 +249,7 @@ function resetBoard() {
     // createBoard();
     /*
     
-    function for player taking turn
-    
+  
     each win condition is a function that evaluates to boolean
     
     each win function is called at the turn 
