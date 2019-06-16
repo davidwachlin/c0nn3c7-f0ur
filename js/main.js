@@ -51,8 +51,10 @@ let placePiece = function (c) {
             row = i
  
             // row and col check, add diag
-            if (checkCol(c)) {
+            if (checkCol(c) || (checkRow(row))) {
                 console.log(`Player ${currentPlayer} wins!`)
+                resetBoard()
+
             }
             changeTurn()
 
@@ -81,8 +83,8 @@ let placePiece = function (c) {
             let didWin = false
             let checkForFour = 0
             for (let i = 0; i < gameBoard.length; i++) {
-                let currentSquare = gameBoard[i][c]
-                if (currentSquare === currentPlayer) {
+                let checkSquare = gameBoard[i][c]
+                if (checkSquare === currentPlayer) {
                     checkForFour++
                     console.log(checkForFour)
                 } else {
@@ -95,9 +97,38 @@ let placePiece = function (c) {
             }
             return didWin
         }
+    
+    function checkRow(row) {
+        let didWin = false
+        let checkForFour = 0
+        for (let j = 0; j < gameBoard[0].length; j++) {
+            let checkSquare = gameBoard[row][j]
+            if (checkSquare === currentPlayer) {
+                checkForFour++
+                console.log(checkForFour)
+            } else {
+                checkForFour = 0
+            }
+            if (checkForFour === 4) {
+                didWin = true
+                console.log(didWin)
+            }
+        }
+        return didWin
+    }
 
 
-
+function resetBoard() {
+    gameBoard =[
+        ["", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", ""]
+    ]
+    createBoard();
+}
 
 })
 
