@@ -7,10 +7,13 @@
     justify-content: center;
     align-items: center;
     color: #010165;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
 }
 
 .sidebar {
-    border: 1px solid blue;
+
     background-color: #010165;
     color: #00ffff;
     display: flex;
@@ -53,9 +56,7 @@
 
 }
 
-.col0 {
-    background: lightgreen
-}
+
 
 
 .empty {
@@ -71,15 +72,20 @@
 }
 
 .board{
-    border: 2px solid #00ffff;
-
+    border: 5px solid #00ffff;
+    font-family: 'IBM Plex Mono', monospace;
     color: #010165;
     text-align: center;
 }
 .counter {
     color: #00ffff;
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: 'Orbitron', sans-serif;
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 #playerOneBoard h5{
