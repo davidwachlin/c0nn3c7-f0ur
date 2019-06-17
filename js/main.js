@@ -56,7 +56,7 @@ let placePiece = function (c) {
             row = i
  
             // row and col check, add diag
-            if (checkCol(c) || checkRow(row) || checkDiagonalTR()) {
+            if (checkCol(c) || checkRow(row) || checkDiagonalTR() || checkDiagonalRTL() || checkDiagonalLTRD()) {
                 alert(`Player ${currentPlayer} wins!`)
                 if (currentPlayer === 1) {
                     playerOneScore++
@@ -79,7 +79,7 @@ let placePiece = function (c) {
     function changeTurn () {
         if (currentPlayer === 1) {
             currentPlayer = 2
-        } else {
+        } else if (currentPlayer === 2) {
             currentPlayer = 1
         }
         if (currentPlayerClass === 'playerOne') {
@@ -133,7 +133,8 @@ let placePiece = function (c) {
 
     function checkDiagonalTR() {
         let didWin = false
-        for (let row = 0; row < gameBoard.length - 4; row++) {
+        
+        for (let row = 0; row < gameBoard.length - 3; row++) {
           for (let col = 3; col < gameBoard[row].length - 3; col++) {
             if (
               gameBoard[row][col] != "" &&
@@ -142,12 +143,51 @@ let placePiece = function (c) {
               gameBoard[row][col] == gameBoard[row + 3][col - 3]
             ) {
               didWin = true;
+              console.log(didWin)
             }
           }
         }
         return didWin;
       }
 
+      function checkDiagonalRTL() {
+        let didWin = false
+        
+        for (let row = 0; row < gameBoard.length - 3; row++) {
+          for (let col = 0; col < gameBoard[row].length - 3; col++) {
+            if (
+              gameBoard[row][col] != "" &&
+              gameBoard[row][col] == gameBoard[row + 1][col + 1] &&
+              gameBoard[row][col] == gameBoard[row + 2][col + 2] &&
+              gameBoard[row][col] == gameBoard[row + 3][col + 3]
+            ) {
+              didWin = true;
+              console.log(didWin)
+            }
+          }
+        }
+        return didWin;
+      }
+
+      function checkDiagonalLTRD() {
+      let didWin = false
+        
+      for (let row = 0; row < gameBoard.length - 3; row++) {
+        for (let col = 0; col < gameBoard[row].length - 3; col++) {
+          debugger;
+          if (
+            gameBoard[row][col] != "" &&
+            gameBoard[row][col] == gameBoard[row - 1][col + 1] &&
+            gameBoard[row][col] == gameBoard[row - 2][col + 2] &&
+            gameBoard[row][col] == gameBoard[row - 3][col + 3]
+          ) {
+            didWin = true;
+            console.log(didWin)
+          }
+        }
+      }
+      return didWin;
+    }
 
 
     // function checkDiagonalUpRight(row, c) {
