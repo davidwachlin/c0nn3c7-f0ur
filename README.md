@@ -1,4 +1,5 @@
 # project-1
-https://trello.com/b/ieLuHWmI/sei-project-1
-https://ecstatic-minsky-8654bf.netlify.com/
+[Deployed site](https://ecstatic-minsky-8654bf.netlify.com)
+[Trello Board](https://trello.com/b/ieLuHWmI/sei-project-1)
+
 
