@@ -4,4 +4,4 @@
 
 [Trello Board](https://trello.com/b/ieLuHWmI/sei-project-1)
 
-
+For my first project, I built a version of connect four. 
