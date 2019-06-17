@@ -56,7 +56,7 @@ let placePiece = function (c) {
             row = i
  
             // row and col check, add diag
-            if (checkCol(c) || checkRow(row)) {
+            if (checkCol(c) || checkRow(row) || checkDiagonalTR()) {
                 alert(`Player ${currentPlayer} wins!`)
                 if (currentPlayer === 1) {
                     playerOneScore++
@@ -130,11 +130,31 @@ let placePiece = function (c) {
         return didWin
     }
 
+
+    function checkDiagonalTR() {
+        let didWin = false
+        for (let row = 0; row < gameBoard.length - 4; row++) {
+          for (let col = 3; col < gameBoard[row].length - 3; col++) {
+            if (
+              gameBoard[row][col] != "" &&
+              gameBoard[row][col] == gameBoard[row + 1][col - 1] &&
+              gameBoard[row][col] == gameBoard[row + 2][col - 2] &&
+              gameBoard[row][col] == gameBoard[row + 3][col - 3]
+            ) {
+              didWin = true;
+            }
+          }
+        }
+        return didWin;
+      }
+
+
+
     // function checkDiagonalUpRight(row, c) {
     //     let didWin = false;
     //     let checkForFour = 0;
     //     console.log(`row ${row} col ${c}`)
-    //     for (let j = 0; j < gameBoard[0].length; j++) {
+    //     for (let j = 0; j < gameBoard[0].length - 3; j++) {
     //         let checkSquare = gameBoard[row][j]
     //         if (checkSquare === currentPlayer) {
     //             checkForFour++
