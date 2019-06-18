@@ -97,6 +97,18 @@ h5 {
 
 
 }
+#instructionsBoard {
+    height: 50%;
 
+}
+#instructionsBoard h5 {
+    background: #00FF41;
+}
 
     
+#instructions {
+    color: #00FF41;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
