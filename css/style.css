@@ -103,11 +103,13 @@ h5 {
 }
 #instructionsBoard h5 {
     background: #00FF41;
+
 }
 
 
 ol {
     text-align: left;
+    margin-top: 22px;
 }
 #instructions {
     color: #00FF41;
