@@ -97,12 +97,14 @@ h5 {
 
 
 }
+
 #instructionsBoard {
     height: 75%;
+    margin-top: 20px;
 
 }
 #instructionsBoard h5 {
-    background: #00FF41;
+    background: #00ffff;
 
 }
 
@@ -115,3 +117,4 @@ ol {
     color: #00FF41;
 
 }
+
