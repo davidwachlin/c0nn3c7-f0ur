@@ -106,11 +106,8 @@ h5 {
 }
 
 
-ol{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+ol {
+    text-align: left;
 }
 #instructions {
     color: #00FF41;
