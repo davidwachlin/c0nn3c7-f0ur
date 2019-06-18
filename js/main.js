@@ -57,7 +57,10 @@ let placePiece = function (c) {
  
             // row and col check, add diag
             if (checkCol(c) || checkRow(row) || checkDiagonalTR() || checkDiagonalRTL() || checkDiagonalLTRD()) {
-                alert(`Player ${currentPlayer} wins!`)
+                Swal.fire(
+                    `Player ${currentPlayer} wins!`,
+                  )
+
                 if (currentPlayer === 1) {
                     playerOneScore++
                 } else {
