@@ -2,7 +2,7 @@
 [Deployed site](https://ecstatic-minsky-8654bf.netlify.com)
 
 
-[Trello Board](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 
+[Trello Board](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png)
 
 
 
